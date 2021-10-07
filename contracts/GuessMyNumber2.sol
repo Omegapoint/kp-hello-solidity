@@ -1,4 +1,4 @@
-pragma solidity ^0.5.0;
+pragma solidity ^0.8.9;
 
 contract GuessMyNumber2 {
     address public owner;
@@ -7,14 +7,14 @@ contract GuessMyNumber2 {
     uint public jackpot;
     event guessEvent(uint16 guess, string message);
 
-    constructor() public {
+    constructor() {
        owner = msg.sender;
     }
 
-    function guess (uint16 guess) public payable{
+    function guess (uint16 guess_number) public payable{
         //TODO: implement this
-        //Perhaps the guesser should be required to pay
-        emit guessEvent(guess, "This was your guess");
+        //How much should a guesser pay and what are the rules for wrong
+        emit guessEvent(guess_number, "This was your guess");
     }
 
     function setSecretNumber (uint16 newSecret) public payable {
@@ -25,9 +25,9 @@ contract GuessMyNumber2 {
     }
 
     function withdrawJackpot () public payable {
-        //Right now anyone can withdraw the money!
-        //TODO: implement something better!
-        msg.sender.transfer(jackpot);
+        //Right now anyone can withdraw the money at any time!
+        //TODO: implement something better
+        payable(msg.sender).transfer(jackpot);
     }
 
 }
