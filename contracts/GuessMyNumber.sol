@@ -11,6 +11,7 @@ contract GuessMyNumber {
     }
 
     function guess (uint16 guess) public {
+        //TODO implement this!
         emit guessEvent(guess, "This was your guess");
     }
 
