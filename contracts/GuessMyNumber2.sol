@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: MIT
 pragma solidity ^0.8.9;
 
 contract GuessMyNumber2 {
@@ -29,5 +30,4 @@ contract GuessMyNumber2 {
         //TODO: implement something better
         payable(msg.sender).transfer(jackpot);
     }
-
 }
