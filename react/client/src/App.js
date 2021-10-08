@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import GuessMyNumber from "./contracts/GuessMyNumber.json";
 import getWeb3 from "./getWeb3";
+import Player1 from "./Player1";
 
 import "./App.css";
 
@@ -39,10 +40,10 @@ class App extends Component {
     const { accounts, contract } = this.state;
 
     // Stores a given value, 5 by default.
-    await contract.methods.setSecretNumber(5).send({ from: accounts[0] });
+    // await contract.methods.setSecretNumber(5).send({ from: accounts[0] });
 
     // Get the value from the contract to prove it worked.
-    const response = await contract.methods.get().call();
+    const response = await contract.methods.secretNumber().call();
 
     // Update state with the result.
     this.setState({ storageValue: response });
@@ -65,6 +66,7 @@ class App extends Component {
           Try changing the value stored on <strong>line 42</strong> of App.js.
         </p>
         <div>The stored value is: {this.state.secretNumber}</div>
+        <Player1 contract={this.state.contract} accounts={this.state.accounts} />
       </div>
     );
   }
