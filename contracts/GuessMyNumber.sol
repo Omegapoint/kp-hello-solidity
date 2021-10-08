@@ -3,9 +3,11 @@ pragma solidity ^0.8.9;
 
 contract GuessMyNumber {
     address public owner;
-    uint16 public secretNumber;
+    uint16 secretNumber;
 
     event guessEvent(uint16 guess, string message);
+    event secretEvent(uint16 number);
+
 
     constructor() {
        owner = msg.sender;
@@ -19,6 +21,7 @@ contract GuessMyNumber {
     function setSecretNumber (uint16 newSecret) public {
       require(msg.sender == owner);
       secretNumber = newSecret;
+      emit secretEvent(newSecret);
     }
 
 }

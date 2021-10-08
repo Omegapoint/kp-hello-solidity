@@ -36,7 +36,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [],
@@ -49,7 +50,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [
@@ -62,7 +64,8 @@
       "name": "guess",
       "outputs": [],
       "stateMutability": "payable",
-      "type": "function"
+      "type": "function",
+      "payable": true
     },
     {
       "inputs": [
@@ -75,14 +78,16 @@
       "name": "setSecretNumber",
       "outputs": [],
       "stateMutability": "payable",
-      "type": "function"
+      "type": "function",
+      "payable": true
     },
     {
       "inputs": [],
       "name": "withdrawJackpot",
       "outputs": [],
       "stateMutability": "payable",
-      "type": "function"
+      "type": "function",
+      "payable": true
     }
   ],
   "metadata": "{\"compiler\":{\"version\":\"0.8.9+commit.e5eed63a\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint16\",\"name\":\"guess\",\"type\":\"uint16\"},{\"indexed\":false,\"internalType\":\"string\",\"name\":\"message\",\"type\":\"string\"}],\"name\":\"guessEvent\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"uint16\",\"name\":\"guess_number\",\"type\":\"uint16\"}],\"name\":\"guess\",\"outputs\":[],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"jackpot\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"owner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint16\",\"name\":\"newSecret\",\"type\":\"uint16\"}],\"name\":\"setSecretNumber\",\"outputs\":[],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"withdrawJackpot\",\"outputs\":[],\"stateMutability\":\"payable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/GuessMyNumber2.sol\":\"GuessMyNumber2\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/GuessMyNumber2.sol\":{\"keccak256\":\"0x3e8631f07d2b6990a2e6f49161b2d417564b54390a8f4f6a6575da580d682c83\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://8a73d48534137aa7182d5f9dfdfa9d0d415192454324d1622983a04bccc5cac8\",\"dweb:/ipfs/QmVLqAgCwqgSKeHVB6sthwKSnERRK7MXiAveDqe38myxQX\"]}},\"version\":1}",
@@ -3866,12 +3871,13 @@
     "5777": {
       "events": {},
       "links": {},
-      "address": "0x9211D3fB76Bd2455E9869f2151A824D1De2713e8",
-      "transactionHash": "0x795641d7f5dbaee8affe60f7b6059be18f6dcf54892477355dc66aa85ab94fd8"
+      "address": "0xF9Fb274190B17Be6D0D957BfDE3295AD0F60b0cE",
+      "transactionHash": "0xe45d851965f11a347ef7e93a3085e428b10a833d628732e9e68d5e6440724336"
     }
   },
   "schemaVersion": "3.4.3",
-  "updatedAt": "2021-10-08T09:51:30.837Z",
+  "updatedAt": "2021-10-08T10:26:45.351Z",
+  "networkType": "ethereum",
   "devdoc": {
     "kind": "dev",
     "methods": {},
