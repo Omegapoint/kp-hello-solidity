@@ -2,8 +2,11 @@ import React, { Component } from "react";
 import GuessMyNumber from "./contracts/GuessMyNumber.json";
 import getWeb3 from "./getWeb3";
 import Player1 from "./Player1";
+import Player2 from "./Player2";
+
 
 import "./App.css";
+import LogDashboard from "./LogDashboard";
 
 class App extends Component {
   state = { storageValue: 0, web3: null, accounts: null, contract: null };
@@ -26,7 +29,8 @@ class App extends Component {
 
       // Set web3, accounts, and contract to the state, and then proceed with an
       // example of interacting with the contract's methods.
-      this.setState({ web3, accounts, contract: instance }, this.runExample);
+      var event = instance.events.guessEvent;
+      this.setState({ web3, accounts, contract: instance , event}, this.runExample);
     } catch (error) {
       // Catch any errors for any of the above operations.
       alert(
@@ -56,17 +60,12 @@ class App extends Component {
     return (
       <div className="App">
         <h1>Good to Go!</h1>
-        <p>Your Truffle Box is installed and ready.</p>
-        <h2>Smart Contract Example</h2>
-        <p>
-          If your contracts compiled and migrated successfully, below will show
-          a stored value of 5 (by default).
-        </p>
-        <p>
-          Try changing the value stored on <strong>line 42</strong> of App.js.
-        </p>
-        <div>The stored value is: {this.state.secretNumber}</div>
+        <h2>Player 1</h2>
         <Player1 contract={this.state.contract} accounts={this.state.accounts} />
+        <h2>Player 2</h2>
+        <Player2 contract={this.state.contract} accounts={this.state.accounts} />
+        <h2>Log</h2>
+        <LogDashboard event={this.state.event} contract ={this.state.contract} />
       </div>
     );
   }
