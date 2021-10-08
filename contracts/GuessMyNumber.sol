@@ -20,5 +20,4 @@ contract GuessMyNumber {
       require(msg.sender == owner);
       secretNumber = newSecret;
     }
-
 }

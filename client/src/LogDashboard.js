@@ -4,7 +4,7 @@ import React from 'react';
 class LogDashboard extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {value: ['123123']};
+    this.state = {value: ['']};
     this.event = props.event;
     this.contract = props.contract;
   }

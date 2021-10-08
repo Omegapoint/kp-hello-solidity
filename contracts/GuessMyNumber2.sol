@@ -30,5 +30,4 @@ contract GuessMyNumber2 {
         //TODO: implement something better
         payable(msg.sender).transfer(jackpot);
     }
-
 }
