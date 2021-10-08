@@ -1,8 +1,9 @@
+// SPDX-License-Identifier: MIT
 pragma solidity ^0.8.9;
 
 contract GuessMyNumber {
     address public owner;
-    uint16 secretNumber;
+    uint16 public secretNumber;
 
     event guessEvent(uint16 guess, string message);
 
