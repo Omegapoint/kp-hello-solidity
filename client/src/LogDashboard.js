@@ -18,11 +18,16 @@ class LogDashboard extends React.Component {
             alert("error while subscribing to event")
             console.log(error)
           }
-          console.log(event.returnValues);
-          component.setState(prevState => {
-            console.log(prevState)
-            return { value: [...prevState.value, event.returnValues[0] + " - " + event.returnValues[1]] }
-          })
+          if(event.event === "guessEvent"){
+            component.setState(prevState => {
+              return { value: [...prevState.value, event.returnValues[0] + " - " + event.returnValues[1]] }
+            })
+          } else if(event.event === "secretEvent") {
+            component.setState(prevState => {
+              return { value: [...prevState.value, event.returnValues[0] + " - is the secret number"] }
+            })
+          }
+
         }
       );
   }
